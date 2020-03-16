@@ -76,5 +76,19 @@ turtleMovements.forEach(element => {
   console.log(`Movement #2: ${element[1]} steps`);
 });
 
-console.log(`filtered: ${filteredTurtleMove} | totalTurtleMoves: ${totalTurtleMove} 
-`);
+// reduce
+
+let initialValue = 'noggin oreo the moon time tele steed his tent apollo her lives though shoo tofu budapest';
+const arr = initialValue.split(' ');
+
+const reducer = (accum, currentValue) => {
+  if (currentValue.length === 3) {
+    return accum += ' ';
+  }
+  else {
+    return accum += currentValue.slice(-1).toUpperCase();
+  }
+};
+
+
+console.log(arr.reduce(reducer, ''));
