@@ -46,3 +46,23 @@ const filteredNames = filter(myNames, (name) => name[0] === 'R');
 
 console.log(filteredNames); // => ['Rich', 'Ray']
 // <---- DO NOT EDIT BETWEEN THESE LINES
+
+// 3
+
+function hazardWarningCreator(typeOfWarning) {
+  let warningCounter = 0;
+  return location => {
+    warningCounter++;
+    console.log(`DANGER! There is a ${typeOfWarning} hazard at ${location}!`);
+    console.log(`The ${typeOfWarning} hazard alert has triggered ${warningCounter} time(s) today!`);
+    return warningCounter;
+  };
+}
+
+const rocksWarning = hazardWarningCreator('Rocks on the Road');
+const coronavirus = hazardWarningCreator('You are infected, the end is nigh');
+const earthExploding = hazardWarningCreator('Everything is gone');
+rocksWarning('Main St and Pacific Ave');
+rocksWarning('A place with rocks');
+coronavirus('Michigan');
+earthExploding('Everywhere');
