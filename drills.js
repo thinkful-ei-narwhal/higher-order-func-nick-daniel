@@ -66,3 +66,15 @@ rocksWarning('Main St and Pacific Ave');
 rocksWarning('A place with rocks');
 coronavirus('Michigan');
 earthExploding('Everywhere');
+
+//foreach, filter and map
+const turtleMovements = [[0, 0], [0, 5], [-1, -3], [-3, 1], [2, -4], [3, 2]];
+const filteredTurtleMove = turtleMovements.filter(e => e[0] >= 0 && e[1] >= 0);
+const totalTurtleMove = turtleMovements.map(i => i[0] + i[1]);
+turtleMovements.forEach(element => {
+  console.log(`Movement #1: ${element[0]} steps`);
+  console.log(`Movement #2: ${element[1]} steps`);
+});
+
+console.log(`filtered: ${filteredTurtleMove} | totalTurtleMoves: ${totalTurtleMove} 
+`);
